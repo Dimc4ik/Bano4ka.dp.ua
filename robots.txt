@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://www.bano4ka.dp.ua/sitemap.xml

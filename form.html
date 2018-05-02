@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="utf-8"/>
+<head>
+	<meta name="description" content="Баночка в Подарок или Что подарить на праздник!" />
+	<title>Bano4ka.dp отправка формы заказа</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">   
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="js/manifest.json">
+    <link rel="stylesheet" href="libs/font-awesome-4.6.3/css/font-awesome.min.css">    
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ededed">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMZb_4B90S6dQec3occOP_rE3XPMabTec"></script>
+	<script type="text/javascript" defer>
+		function initialize() {
+				var mapOptions = {
+							zoom: 15,
+							center: new google.maps.LatLng(48.466474, 34.978725),   
+							mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+				var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+				var marker = new google.maps.Marker({
+							map: map, 
+							draggable: false, 
+							position: new google.maps.LatLng(48.466474, 34.978725)
+					});
+		 }						
+		google.maps.event.addDomListener(window, 'resize', initialize);
+		google.maps.event.addDomListener(window, 'load', initialize);
+    </script>    
+</head>
+<body>
+    <div class="smart-wrap">
+    	<div class="smart-forms smart-container wrap-0">
+        	<div class="form-header header-primary">
+            	<h4><i class="fa fa-comments"></i>Баночка в подарок</h4>
+            </div>
+            <form method="POST" action="telegram.php" class="contact">
+            	<div class="form-body">
+                	<div class="frm-row">
+                    	<div class="colm colm6">
+                            <div class="section">
+                                <label class="field prepend-icon">
+                                    <input type="text" name="user_name" id="names" class="gui-input" placeholder="Введите имя..." required autofocus>
+                                    <span class="field-icon"><i class="fa fa-user"></i></span>  
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label class="field prepend-icon">
+                                    <input type="email" name="user_email" id="email" class="gui-input" placeholder="example@domain.com...">
+                                    <span class="field-icon"><i class="fa fa-envelope"></i></span>  
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label class="field prepend-icon">
+                                    <input type="tel" name="user_phone" id="telephone" class="gui-input" placeholder="Введите мобильный..." required>
+                                    <span class="field-icon"><i class="fa fa-phone-square"></i></span>  
+                                </label>
+                            </div>
+                            <div class="section">
+                                <label class="field prepend-icon">
+                                    <textarea class="gui-textarea" id="comment" name="user_comment"></textarea>
+                                    <span class="field-icon"><i class="fa fa-comments"></i></span>
+                                    <span class="input-hint"><strong>Примечание:</strong> Пожалуйста введите 80 - 300 символов.</span>   
+                                </label>
+                            </div>
+                        </div>
+                        <div class="colm colm6">
+                             <div class="map-container">
+                                 <div id="map_canvas"></div>
+                             </div>                        
+                        </div>
+                   </div>                              
+                 </div>
+                <div class="form-footer">
+                	<button type="submit" class="button btn-primary">Сделать заказ</button>
+                	<a href="https://bano4ka.dp.ua/">На главную</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div></div>
+</body>
+</html>
